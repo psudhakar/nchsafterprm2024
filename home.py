@@ -38,7 +38,6 @@ is_mobile = is_mobile(user_agent)
 
 col1, col2 = st.columns([1,6])
 
-
 if not is_mobile:
     with col1:
         st.image('nchslogo.jpg', width=100)  # Adjust width as needed
@@ -52,12 +51,12 @@ if not is_mobile:
             unsafe_allow_html=True,
         )
 else:
-        st.markdown(
-            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
-            + """<h1>✨Normal Community High School After Prom✨</h1>"""
-            + "</marquee>",
-            unsafe_allow_html=True,
-        )
+    st.markdown(
+        """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+        + """<h1>✨Normal Community High School After Prom✨</h1>"""
+        + "</marquee>",
+        unsafe_allow_html=True,
+    )
 
 # Text block about the event details
 st.subheader("Join us for an unforgettable night!")
