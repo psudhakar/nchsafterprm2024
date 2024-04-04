@@ -20,17 +20,21 @@ try:
 except:
   pass  # In case the image is not uploaded
 
-# Include the logo image
-# Download the image from your email and save it as 'logo.jpg' in the same directory as this script
-st.image('nchslogo.jpg', width=200)  # Adjust width as needed
+col1, col2 = st.columns([1,3])
 
-# Title with a marquee effect
-st.markdown(
-    """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
-    + """<h1>✨Normal Community High School After Prom✨</h1>"""
-    + "</marquee>",
-    unsafe_allow_html=True,
-)
+with col1:
+    # Include the logo image
+    # Download the image from your email and save it as 'logo.jpg' in the same directory as this script
+    st.image('nchslogo.jpg', width=100)  # Adjust width as needed
+
+with col2:
+    # Title with a marquee effect
+    st.markdown(
+        """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+        + """<h1>✨Normal Community High School After Prom✨</h1>"""
+        + "</marquee>",
+        unsafe_allow_html=True,
+    )
 
 # Text block about the event details
 st.subheader("Join us for an unforgettable night!")
