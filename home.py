@@ -20,7 +20,7 @@ try:
 except:
   pass  # In case the image is not uploaded
 
-col1, col2 = st.columns([1,3])
+col1, col2 = st.columns([1,6])
 
 with col1:
     # Include the logo image
@@ -72,7 +72,7 @@ st.image(
 contact_info = """
 For more information, please contact:
 
-* [Normal Community High School](Normal High School website)
+* [Normal Community High School](https://www.unit5.org/NCHS)
 
 We hope to see you there!
 """
