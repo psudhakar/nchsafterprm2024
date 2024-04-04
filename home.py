@@ -13,29 +13,31 @@ def set_bg_image(img_binary):
         f.write(img_binary)
     st.beta_set_background_image("background.jpg")
 
-# Getting the background image
-try:
-  # Assuming the image is retrieved from the uploaded file and named 'file'
-  set_bg_image(st.session_state['file'].read())
-except:
-  pass  # In case the image is not uploaded
+
+is_desktop = not st.is_browser("mobile")
 
 col1, col2 = st.columns([1,6])
 
-with col1:
-    # Include the logo image
-    # Download the image from your email and save it as 'logo.jpg' in the same directory as this script
-    st.image('nchslogo.jpg', width=100)  # Adjust width as needed
+if is_desktop:
+    with col1:
+        st.image('nchslogo.jpg', width=100)  # Adjust width as needed
 
-with col2:
-    # Title with a marquee effect
-    st.markdown(
-        """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
-        + """<h1>✨Normal Community High School After Prom✨</h1>"""
-        + "</marquee>",
-        unsafe_allow_html=True,
-    )
-
+    with col2:
+        # Title with a marquee effect
+        st.markdown(
+            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+            + """<h1>✨Normal Community High School After Prom✨</h1>"""
+            + "</marquee>",
+            unsafe_allow_html=True,
+        )
+else:
+        st.markdown(
+            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+            + """<h1>✨Normal Community High School After Prom✨</h1>"""
+            + "</marquee>",
+            unsafe_allow_html=True,
+        )
+        
 # Text block about the event details
 st.subheader("Join us for an unforgettable night!")
 event_details = """
