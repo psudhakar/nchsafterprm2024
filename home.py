@@ -1,124 +1,76 @@
 import streamlit as st
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-import pandas as pd
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import re
-from datetime import datetime
-import base64
 
+# Setting the page configuration with a background image
+st.set_page_config(
+    page_title="Normal Community High School After Prom",
+    page_icon=":tada:",
+    layout="wide",
+)
 
+# Set the background image
+def set_bg_image(img_binary):
+    with open("background.jpg", "wb") as f:
+        f.write(img_binary)
+    st.beta_set_background_image("background.jpg")
 
-# Function to save data to Google Sheets
-def save_to_sheet(data, sheet_url):
-    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+# Getting the background image
+try:
+  # Assuming the image is retrieved from the uploaded file and named 'file'
+  set_bg_image(st.session_state['file'].read())
+except:
+  pass  # In case the image is not uploaded
 
-    # Use Streamlit secrets to load credentials
-    creds_dict = {
-        'type': st.secrets['gcp_service_account']['type'],
-        'project_id': st.secrets['gcp_service_account']['project_id'],
-        'private_key_id': st.secrets['gcp_service_account']['private_key_id'],
-        'private_key': st.secrets['gcp_service_account']['private_key'],
-        'client_email': st.secrets['gcp_service_account']['client_email'],
-        'client_id': st.secrets['gcp_service_account']['client_id'],
-        'auth_uri': st.secrets['gcp_service_account']['auth_uri'],
-        'token_uri': st.secrets['gcp_service_account']['token_uri'],
-        'auth_provider_x509_cert_url': st.secrets['gcp_service_account']['auth_provider_x509_cert_url'],
-        'client_x509_cert_url': st.secrets['gcp_service_account']['client_x509_cert_url'],
-        'universe_domain': st.secrets['gcp_service_account']['universe_domain']
-    }
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-    client = gspread.authorize(creds)
-    sheet = client.open_by_url(sheet_url).sheet1
+# Include the logo image
+# Download the image from your email and save it as 'logo.jpg' in the same directory as this script
+st.image('nchslogo.jpg', width=200)  # Adjust width as needed
 
-    # Append data to the sheet
-    sheet.append_row(data)
+# Title with a marquee effect
+st.markdown(
+    """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+    + """<h1>✨Normal Community High School After Prom✨</h1>"""
+    + "</marquee>",
+    unsafe_allow_html=True,
+)
 
-# Function to send email
-def send_email(to_email, data, cc_email="nchsjr.board@gmail.com"):
-    # SMTP server configuration
-    smtp_server = 'smtp.gmail.com'
-    smtp_port = 587
-    smtp_user = 'nchsjr.board@gmail.com'  # Replace with your email address
-    smtp_password = st.secrets["MAIL_APP_PWD"]  # Replace with your email password
+# Text block about the event details
+st.subheader("Join us for an unforgettable night!")
+event_details = """
+The After Prom party is a safe and fun way to celebrate the end of prom night with your friends. 
+This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, glamour, and excitement!
 
-    # Email content
-    message = MIMEMultipart()
-    message['From'] = smtp_user
-    message['To'] = to_email
-    message['Cc'] = cc_email
-    message['Subject'] = 'NCHS After Prom 2024 Trivia Night Registration'
+**Date:** Saturday, April 27th, 2024
+**Time:** 11:00 PM - 3:00 AM
+**Location:** Normal Community High School
 
-    body = f"Here is the registration data submitted:\n{data}"
-    message.attach(MIMEText(body, 'plain'))
+**Activities:**
 
-    # Send the email
-    server = smtplib.SMTP(smtp_server, smtp_port)
-    server.starttls()
-    server.login(smtp_user, smtp_password)
-    server.send_message(message)
-    server.quit()
+* DJ Lights, Music & Lasers
+* Amazing Laser Tag
+* Interactive Games
+* Food Fiesta...and much more!
 
-def validate_email(email):
-    # Regular expression pattern for basic email validation
-    pattern = r"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-    return re.match(pattern, email)
+**Prizes:**
 
-def validate_field(value):
-    if len(value) == 0:
-        return False
-    else:
-        return True
+* Grand Prize: Macbook 15
+* Over $4000 in giveaways!
 
-# Hide hamburger menu and footer
-st.set_page_config(page_title="NCHS After Prom 2024", layout="wide", menu_items={
-    'Get Help': None,
-    'Report a bug': None,
-    'About': None
-})
+**Tickets:** $14 (Tickets can be purchased through the school's GoFan app)
+"""
+st.markdown(event_details)
 
+st.image(
+    "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
+    width=700,
+    caption="Vegas Style After Prom!",
+)
 
-st.markdown("""
-    <style>
-    .block-container {
-        padding-top: 0rem;
-    }
-    .main {
-       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; align: center;
-    }
-    h1 {
-        color: #ff6347;
-        text-align: center;
-    }
-    
-    h5 {
-        color: dark;
-        text-align: center;
-    }
-    .font {
-        font-size:16px;
-        font-weight: 400;
-    }
-    .table-style {
-        margin-left: auto; 
-        margin-right: auto;
-    }
-            
-    @media screen and (max-width: 768px) {
-            .responsive-image {
-                display: none;
-            }
-    }
-    @media screen and (min-width: 768px) {
-        .responsive-image2 {
-            display: none;
-        }
-    }
-            
+# Contact information
+contact_info = """
+For more information, please contact:
 
-    </style>
-    """, unsafe_allow_html=True)
+* [Normal Community High School](Normal High School website)
 
-st.markdown("# NCHS After Prom 2024")
+We hope to see you there!
+"""
+st.subheader("Contact Us")
+st.markdown(contact_info)
