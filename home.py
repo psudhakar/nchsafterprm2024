@@ -1,4 +1,11 @@
 import streamlit as st
+import user_agents
+
+def detect_browser():
+    if st.config.get_option("browser.gatherUsageStats"):
+        return True
+    else:
+        return  False
 
 # Setting the page configuration with a background image
 st.set_page_config(
@@ -13,10 +20,10 @@ def set_bg_image(img_binary):
         f.write(img_binary)
     st.beta_set_background_image("background.jpg")
 
-
-is_desktop = not st.is_browser("mobile")
+is_desktop = detect_browser()
 
 col1, col2 = st.columns([1,6])
+
 
 if is_desktop:
     with col1:
@@ -37,7 +44,7 @@ else:
             + "</marquee>",
             unsafe_allow_html=True,
         )
-        
+
 # Text block about the event details
 st.subheader("Join us for an unforgettable night!")
 event_details = """
