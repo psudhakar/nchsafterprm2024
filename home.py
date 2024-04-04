@@ -1,6 +1,4 @@
 import streamlit as st
-import user_agents
-
 def detect_browser():
     if st.config.get_option("browser.gatherUsageStats"):
         return True
