@@ -86,7 +86,8 @@ st.markdown(centered_text, unsafe_allow_html=True)
 
 event_details = """
 The After Prom party is a safe and fun way to celebrate the end of prom night with your friends. 
-This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, glamour, and excitement!
+This year's theme is **Met Gala Vegas Style**. 
+Get ready for a night of glitz, glamour, and excitement!
 
 **Date:** Saturday, April 27th, 2024
 **Time:** 11:00 PM - 3:00 AM
@@ -111,7 +112,7 @@ event_details2 = """
 """
 
 event_details3 = """
-**Special Promo - 12 Days of Afterprom:**
+**:blue[Upcoming Schedule]: Special Promo - 12 Days of Afterprom:**
 
 - Buy Afterprom tickets early, and increase your chances to win a $15 gift card, each day for 12-days.
 - Winners will be announced daily on AfterProm Instagram page & at school!
