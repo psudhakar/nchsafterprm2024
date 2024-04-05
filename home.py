@@ -25,6 +25,47 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown("""
+    <style>
+    .block-container {
+        padding-top: 0rem;
+    }
+    .main {
+       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; align: center;
+    }
+    h1 {
+        color: #ff6347;
+        text-align: center;
+    }
+    
+    h5 {
+        color: dark;
+        text-align: center;
+    }
+    .font {
+        font-size:16px;
+        font-weight: 400;
+    }
+    .table-style {
+        margin-left: auto; 
+        margin-right: auto;
+    }
+            
+    @media screen and (max-width: 768px) {
+            .responsive-image {
+                display: none;
+            }
+    }
+    @media screen and (min-width: 768px) {
+        .responsive-image2 {
+            display: none;
+        }
+    }
+            
+
+    </style>
+    """, unsafe_allow_html=True)
+
 # Set the background image
 def set_bg_image(img_binary):
     with open("background.jpg", "wb") as f:
@@ -34,29 +75,33 @@ def set_bg_image(img_binary):
 # Get the user-agent string
 user_agent = get_user_agent()
 
-is_mobile = is_mobile(user_agent)
+print(user_agent)
+
+
+is_mobile_device = is_mobile(user_agent)
+print(is_mobile_device)
+
+
 
 col1, col2 = st.columns([1,6])
 
-if not is_mobile:
-    with col1:
-        st.image('nchslogo.jpg', width=100)  # Adjust width as needed
+with col1:
+        st.markdown(f"""<div style="text-align: center;">
+            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 30px;" class="responsive-image">
+            </div>""", unsafe_allow_html=True)
 
-    with col2:
+        st.markdown(f"""<div style="text-align: center;">
+            <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 30px;" class="responsive-image2">
+            </div>""", unsafe_allow_html=True)
+
+with col2:
         # Title with a marquee effect
         st.markdown(
-            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
+            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="10">"""
             + """<h1>✨Normal Community High School After Prom✨</h1>"""
             + "</marquee>",
             unsafe_allow_html=True,
         )
-else:
-    st.markdown(
-        """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="5">"""
-        + """<h1>✨Normal Community High School After Prom✨</h1>"""
-        + "</marquee>",
-        unsafe_allow_html=True,
-    )
 
 # Text block about the event details
 st.subheader("Join us for an unforgettable night!")
