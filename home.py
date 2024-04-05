@@ -1,22 +1,4 @@
 import streamlit as st
-import httpx
-
-# Get the user-agent string
-@st.cache_data()
-def get_user_agent():
-    try:
-        user_agent = httpx.get("https://httpbin.org/user-agent").json()["user-agent"]
-    except Exception as e:
-        user_agent = "Unknown"
-    return user_agent
-
-# Detect if the user is on a mobile device
-def is_mobile(user_agent):
-    mobile_keywords = ["Mobile", "iPhone", "iPad", "Android"]
-    for keyword in mobile_keywords:
-        if keyword in user_agent:
-            return True
-    return False
 
 # Setting the page configuration with a background image
 st.set_page_config(
@@ -72,34 +54,24 @@ def set_bg_image(img_binary):
         f.write(img_binary)
     st.beta_set_background_image("background.jpg")
 
-# Get the user-agent string
-user_agent = get_user_agent()
-
-print(user_agent)
-
-
-is_mobile_device = is_mobile(user_agent)
-print(is_mobile_device)
-
-
-
 col1, col2 = st.columns([1,6])
 
 with col1:
         st.markdown(f"""<div style="text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 30px;" class="responsive-image">
+            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" class="responsive-image">
             </div>""", unsafe_allow_html=True)
 
         st.markdown(f"""<div style="text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 30px;" class="responsive-image2">
+            <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
             </div>""", unsafe_allow_html=True)
 
 with col2:
-        # Title with a marquee effect
+        st.markdown(" ")
         st.markdown(
-            """<marquee behavior="scroll" direction="left" loop="-1" scrollamount="10">"""
-            + """<h1>✨Normal Community High School After Prom✨</h1>"""
-            + "</marquee>",
+            #"""<marquee behavior="scroll" direction="left" loop="-1" scrollamount="15">"""
+            #+ """<h1>✨Normal Community High School After Prom✨</h1>"""
+            #+ "</marquee>"
+             "<h1>✨Normal Community High School After Prom✨</h1>",
             unsafe_allow_html=True,
         )
 
@@ -112,7 +84,10 @@ This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, g
 **Date:** Saturday, April 27th, 2024
 **Time:** 11:00 PM - 3:00 AM
 **Location:** Normal Community High School
+"""
+st.markdown(event_details)
 
+event_details2 = """
 **Activities:**
 
 * DJ Lights, Music & Lasers
@@ -125,9 +100,23 @@ This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, g
 * Grand Prize: Macbook 15
 * Over $4000 in giveaways!
 
+"""
+
+event_details3 = """
+**Special Promo - 12 Days of Afterprom:**
+
+- Buy Afterprom tickets early, and increase your chances to win a $15 gift card, each day for 12-days.
+- Winners will be announced daily on AfterProm Instagram page & at school!
+
 **Tickets:** $14 (Tickets can be purchased through the school's GoFan app)
 """
-st.markdown(event_details)
+
+col1, col2 = st.columns([1,3])
+with col1:
+      st.markdown(event_details2, unsafe_allow_html=True)
+with col2:
+      st.markdown(event_details3, unsafe_allow_html=True)
+
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
