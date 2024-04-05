@@ -58,12 +58,12 @@ col1, col2 = st.columns([1,6])
 
 with col1:
         st.markdown(f"""<div style="text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" class="responsive-image">
+            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" >
             </div>""", unsafe_allow_html=True)
 
-        st.markdown(f"""<div style="text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
-            </div>""", unsafe_allow_html=True)
+        #st.markdown(f"""<div style="text-align: center;">
+        #    <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
+        #    </div>""", unsafe_allow_html=True)
 
 with col2:
         st.markdown(" ")
