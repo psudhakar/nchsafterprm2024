@@ -71,12 +71,19 @@ with col2:
             #"""<marquee behavior="scroll" direction="left" loop="-1" scrollamount="15">"""
             #+ """<h1>✨Normal Community High School After Prom✨</h1>"""
             #+ "</marquee>"
-             "<h1>✨Normal Community High School After Prom✨</h1>",
+             "<h1>✨Normal Community High School After Prom - 2024✨</h1>",
             unsafe_allow_html=True,
         )
 
-# Text block about the event details
-st.subheader("Join us for an unforgettable night!")
+sub_header = "Join us for an unforgettable night!"
+
+# Wrap the text in markdown with center alignment style
+centered_text = f"<h3 style='text-align: center;'>{sub_header}</h2>"
+
+# Display the centered markdown
+st.markdown(centered_text, unsafe_allow_html=True)
+
+
 event_details = """
 The After Prom party is a safe and fun way to celebrate the end of prom night with your friends. 
 This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, glamour, and excitement!
@@ -85,7 +92,8 @@ This year's theme is **Met Gala Vegas Style**. Get ready for a night of glitz, g
 **Time:** 11:00 PM - 3:00 AM
 **Location:** Normal Community High School
 """
-st.markdown(event_details)
+with st.container(border=True):
+      st.markdown(event_details)
 
 event_details2 = """
 **Activities:**
@@ -108,14 +116,16 @@ event_details3 = """
 - Buy Afterprom tickets early, and increase your chances to win a $15 gift card, each day for 12-days.
 - Winners will be announced daily on AfterProm Instagram page & at school!
 
-**Tickets:** $14 (Tickets can be purchased through the school's GoFan app)
+**Tickets:** $14 ( Tickets can be purchased through the school's [GoFan](https://gofan.co/app/school/IL21465) page )
 """
 
 col1, col2 = st.columns([1,3])
-with col1:
-      st.markdown(event_details2, unsafe_allow_html=True)
-with col2:
-      st.markdown(event_details3, unsafe_allow_html=True)
+
+with st.container(border=True):
+    with col1:
+        st.markdown(event_details2, unsafe_allow_html=True)
+    with col2:
+        st.markdown(event_details3, unsafe_allow_html=True)
 
 
 st.image(
