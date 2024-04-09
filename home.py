@@ -83,7 +83,7 @@ with col1:
 
 with col2:
         st.markdown(" ")
-        st.markdown(flashy_text("<h1>✨Normal Community High School After Prom - 2024✨</h1>"),unsafe_allow_html=True)
+        st.markdown("<h1>✨Normal Community High School After Prom - 2024✨</h1>",unsafe_allow_html=True)
 
 
 #col1, col2 = st.columns(2)
