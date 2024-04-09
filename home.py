@@ -1,4 +1,18 @@
 import streamlit as st
+from random import choice
+
+# Define flashy text options
+flashy_styles = [
+    "font-size: 3em; color: #f012be;",  # Large, bright blue
+    "font-weight: bold; text-shadow: 2px 2px 5px #fffa00;",  # Bold with yellow shadow
+    "font-family: 'Courier New'; color: #8a2be2; animation: blink 1s step-end infinite alternate;",  # Courier font, purple, blinking
+]
+
+def flashy_text(text):
+  """Returns the text with a randomly chosen flashy style."""
+  style = choice(flashy_styles)
+  return f"<span style='{style}'>{text}</span>"
+
 
 # Setting the page configuration with a background image
 st.set_page_config(
@@ -69,13 +83,7 @@ with col1:
 
 with col2:
         st.markdown(" ")
-        st.markdown(
-            #"""<marquee behavior="scroll" direction="left" loop="-1" scrollamount="15">"""
-            #+ """<h1>✨Normal Community High School After Prom✨</h1>"""
-            #+ "</marquee>"
-             "<h1>✨Normal Community High School After Prom - 2024✨</h1>",
-            unsafe_allow_html=True,
-        )
+        st.markdown(flashy_text("<h1>✨Normal Community High School After Prom - 2024✨</h1>"),unsafe_allow_html=True)
 
 
 #col1, col2 = st.columns(2)
@@ -94,15 +102,12 @@ with col2:
 #            st.markdown("[Directions](https://nchsafterprom.ticketspice.com/preview/abc58282cedf4ab2829ee2ff7ceca18d#directions)")
 
   
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([4,3])
 
 with col1:
     event_details = """
     ## Prom night ends, After Prom adventure begins !
-    Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom.
-
-
-
+    
     :blue[**The Amazing Laser Tag**]: Strategize your squad and gear up for an unforgettable battle royale between multiple teams. An adrenaline pumping experience in a 50 ft by 50 ft maze
 
     :orange[**Interactive games**]: Challenge your friends to classic Inflatable competitive fun. Putt your way to victory with "Indoor Mini Golf" with 9 hole course. Work together in a thrilling "Light-Up Cones match" and much much more. Win amazing prizes for some of the interactive games.
@@ -112,6 +117,8 @@ with col1:
     :red[**The Main Event**]: Electrify the night with our Celebrity guests from Chicago, the Z-LED Bots, all under the dazzling display of DJ lights, pulsing sounds & heart-pumping music
 
     :blue[**Grand Finale**]: Get ready for college by gearing up for an epic giveaway, with the chance to win over $6000 in prizes. Create memories that will last long after the music & Afterprom fades away!
+
+    :green[**Street Challenges**]: Non-stop fun with tons of on-the-spot prizes. Afterprom committee will test your brain and body for a chance to win a bucketload of awesome prizes! We'll have you thinking fast with trivia questions and then get you moving with fun physical challenges.
     """
     with st.container(border=True):
         st.markdown(event_details, unsafe_allow_html=True )
@@ -132,11 +139,6 @@ with col2:
         col1, col2 = st.columns([1,4])
        
         with col1:
-             st.markdown("**Location:**")
-        with col2: 
-            st.markdown("3900 E Raab Rd, Normal, IL 61761, USA, Normal, IL, 61761 US")
-
-        with col1:
              st.markdown("**School web site:**")
         with col2: 
             st.markdown("[Normal Community High School](https://www.unit5.org/NCHS)")
@@ -146,10 +148,18 @@ with col2:
         with col2:
             st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Only **$14** for AfterProm tickets from GoFan. Use Access Code: :green[PROM24])")
 
+        with col1:
+             st.markdown("**Location:**")
+        with col2: 
+            st.markdown("3900 E Raab Rd, Normal, IL 61761, USA, Normal, IL, 61761 US")
+
         with col1:       
             st.markdown("**Directions:**")
         with col2:
              st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
+
+    with st.container(border=True):
+        st.markdown(flashy_text("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨"), unsafe_allow_html=True)
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
@@ -171,14 +181,3 @@ st.image(
 #    width=700,
 #    caption="Vegas Style After Prom!",
 #)
-
-# Contact information
-contact_info = """
-For more information, please contact:
-
-* [Normal Community High School](https://www.unit5.org/NCHS)
-
-We hope to see you there!
-"""
-st.subheader("Contact Us")
-st.markdown(contact_info)
