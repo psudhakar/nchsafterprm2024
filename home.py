@@ -1,5 +1,6 @@
 import streamlit as st
 from random import choice
+import time
 
 # Define flashy text options
 flashy_styles = [
@@ -69,7 +70,6 @@ def set_bg_image(img_binary):
     st.beta_set_background_image("background.jpg")
 
 
-
 col1, col2 = st.columns([1,6])
 
 with col1:
@@ -112,13 +112,14 @@ with col1:
 
     :orange[**Interactive games**]: Challenge your friends to classic Inflatable competitive fun. Putt your way to victory with "Indoor Mini Golf" with 9 hole course. Work together in a thrilling "Light-Up Cones match" and much much more. Win amazing prizes for some of the interactive games.
 
-    :green[**Food Fiesta**]: Fuel up with an explosion of delicious finger foods, snacks, soft drinks & party treats to keep you hydrated & charged up throughout the night
+    :green[**Street Challenges**]: Non-stop fun with tons of on-the-spot prizes. Afterprom committee will test your brain and body for a chance to win a bucketload of awesome prizes! We'll have you thinking fast with trivia questions and then get you moving with fun physical challenges.
+    
+    :orange[**Food Fiesta**]: Fuel up with an explosion of delicious finger foods, snacks, soft drinks & party treats to keep you hydrated & charged up throughout the night
 
     :red[**The Main Event**]: Electrify the night with our Celebrity guests from Chicago, the Z-LED Bots, all under the dazzling display of DJ lights, pulsing sounds & heart-pumping music
 
     :blue[**Grand Finale**]: Get ready for college by gearing up for an epic giveaway, with the chance to win over $6000 in prizes. Create memories that will last long after the music & Afterprom fades away!
 
-    :green[**Street Challenges**]: Non-stop fun with tons of on-the-spot prizes. Afterprom committee will test your brain and body for a chance to win a bucketload of awesome prizes! We'll have you thinking fast with trivia questions and then get you moving with fun physical challenges.
     """
     with st.container(border=True):
         st.markdown(event_details, unsafe_allow_html=True )
@@ -159,7 +160,9 @@ with col2:
              st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
 
     with st.container(border=True):
-        st.markdown(flashy_text("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨"), unsafe_allow_html=True)
+        with st.spinner("Adding some sparkle..."):
+            time.sleep(5)
+            st.markdown(flashy_text("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨"), unsafe_allow_html=True)
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
