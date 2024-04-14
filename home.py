@@ -84,7 +84,6 @@ st.balloons()
 #        with col3:
 #            st.markdown("[Directions](https://nchsafterprom.ticketspice.com/preview/abc58282cedf4ab2829ee2ff7ceca18d#directions)")
 
-  
 col1, col2 = st.columns([4,3])
 
 with col1:
