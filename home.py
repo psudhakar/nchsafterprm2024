@@ -47,7 +47,7 @@ st.markdown("""
     }
             
     [data-testid="stAppViewContainer"] > .main {{
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.8);
     }}
             
 
@@ -70,7 +70,7 @@ st.markdown(f"""<div style="text-align: center;">
         #    <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
         #    </div>""", unsafe_allow_html=True)
 
-st.title("✨Normal Community High School After Prom - 2024✨")
+st.title("✨ :rainbow[Normal Community High School After Prom - 2024]✨")
 
 st.balloons()
 
@@ -114,7 +114,8 @@ with col1:
 
 with col2:
     event_details3 = """
-    #### :blue[Upcoming Schedule]: Special Promo - 12 Days of Afterprom:
+    #### :blue[Upcoming Schedule]:
+    #####  Special Promo - 12 Days of Afterprom:
 
     - Buy Afterprom tickets early, and increase your chances to win a $15 gift card, each day for 12-days.
     - Winners will be announced daily on AfterProm Instagram page & at school!
@@ -139,7 +140,7 @@ with col2:
              st.markdown("**Buy Tickets:**")
              
         with col2:
-            st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Only **$14** for AfterProm tickets from GoFan. Use Access Code: :green[PROM24])")
+            st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Use Access Code: :green[PROM24])")
 
         col1, col2 = st.columns([1,4])
         
@@ -157,7 +158,7 @@ with col2:
             st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
 
     with st.container(border=True):
-        st.subheader("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨", divider=True)
+        st.markdown("✨ :rainbow[**Join us for an epic After Prom, an unforgettable journey beyond the ballroom**] ✨")
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
