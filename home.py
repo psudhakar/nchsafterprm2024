@@ -2,23 +2,10 @@ import streamlit as st
 from random import choice
 import time
 
-# Define flashy text options
-flashy_styles = [
-    "font-size: 3em; color: #f012be;",  # Large, bright blue
-    "font-weight: bold; text-shadow: 2px 2px 5px #fffa00;",  # Bold with yellow shadow
-    "font-family: 'Courier New'; color: #8a2be2; animation: blink 1s step-end infinite alternate;",  # Courier font, purple, blinking
-]
-
-def flashy_text(text):
-  """Returns the text with a randomly chosen flashy style."""
-  style = choice(flashy_styles)
-  return f"<span style='{style}'>{text}</span>"
-
-
 # Setting the page configuration with a background image
 st.set_page_config(
     page_title="Normal Community High School After Prom",
-    page_icon=":tada:",
+    page_icon=":school:",
     layout="wide",
 )
 
@@ -59,32 +46,33 @@ st.markdown("""
         }
     }
             
+    [data-testid="stAppViewContainer"] > .main {{
+        background-color: black;
+    }}
+            
 
     </style>
     """, unsafe_allow_html=True)
 
-# Set the background image
-def set_bg_image(img_binary):
-    with open("background.jpg", "wb") as f:
-        f.write(img_binary)
-    st.beta_set_background_image("background.jpg")
+def example():
+    rain(
+        emoji="🎈",
+        font_size=54,
+        falling_speed=10,
+        animation_length="infinite",
+    )
 
-
-col1, col2 = st.columns([1,6])
-
-with col1:
-        st.markdown(f"""<div style="text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" >
-            </div>""", unsafe_allow_html=True)
+st.markdown(f"""<div style="text-align: center;">
+    <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" >
+    </div>""", unsafe_allow_html=True)
 
         #st.markdown(f"""<div style="text-align: center;">
         #    <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
         #    </div>""", unsafe_allow_html=True)
 
-with col2:
-        st.markdown(" ")
-        st.markdown("<h1>✨Normal Community High School After Prom - 2024✨</h1>",unsafe_allow_html=True)
+st.title("✨Normal Community High School After Prom - 2024✨")
 
+st.balloons()
 
 #col1, col2 = st.columns(2)
 
@@ -141,28 +129,19 @@ with col2:
        
         with col1:
              st.markdown("**School web site:**")
+             st.markdown("**Buy Tickets:**")
+             st.markdown("")
+             st.markdown("**Location:**")
+             st.markdown("**Directions:**")
+
         with col2: 
             st.markdown("[Normal Community High School](https://www.unit5.org/NCHS)")
-
-        with col1:
-             st.markdown("**Buy Tickets:**")
-        with col2:
             st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Only **$14** for AfterProm tickets from GoFan. Use Access Code: :green[PROM24])")
-
-        with col1:
-             st.markdown("**Location:**")
-        with col2: 
             st.markdown("3900 E Raab Rd, Normal, IL 61761, USA, Normal, IL, 61761 US")
-
-        with col1:       
-            st.markdown("**Directions:**")
-        with col2:
-             st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
+            st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
 
     with st.container(border=True):
-        with st.spinner("Adding some sparkle..."):
-            time.sleep(5)
-            st.markdown(flashy_text("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨"), unsafe_allow_html=True)
+        st.subheader("✨ Join us for an epic After Prom Party, an unforgettable journey beyond the ballroom. ✨", divider=True)
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
