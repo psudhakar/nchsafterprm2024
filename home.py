@@ -45,11 +45,6 @@ st.markdown("""
             display: none;
         }
     }
-            
-    [data-testid="stAppViewContainer"] > .main {{
-        background-color: rgba(0, 0, 0, 0.8);
-    }}
-            
 
     </style>
     """, unsafe_allow_html=True)
@@ -70,7 +65,7 @@ st.markdown(f"""<div style="text-align: center;">
         #    <img src="https://lh3.googleusercontent.com/d/1KAHfNo580cBk7mh-h7FAkcO1N-csAeAa" alt="Image"  style="margin-top: 25px;" class="responsive-image2">
         #    </div>""", unsafe_allow_html=True)
 
-st.title("✨ :rainbow[Normal Community High School After Prom - 2024]✨")
+st.markdown("# ✨ :rainbow[Normal Community High School After Prom - 2024]✨")
 
 st.balloons()
 
@@ -96,17 +91,17 @@ with col1:
     event_details = """
     ## Prom night ends, After Prom adventure begins !
     
-    :blue[**The Amazing Laser Tag**]: Strategize your squad and gear up for an unforgettable battle royale between multiple teams. An adrenaline pumping experience in a 50 ft by 50 ft maze
+    :lightning: :blue[**The Amazing Laser Tag**]: &nbsp; Strategize your squad and gear up for an unforgettable battle royale between multiple teams. An adrenaline pumping experience in a 50 ft by 50 ft maze
 
-    :orange[**Interactive games**]: Challenge your friends to classic Inflatable competitive fun. Putt your way to victory with "Indoor Mini Golf" with 9 hole course. Work together in a thrilling "Light-Up Cones match" and much much more. Win amazing prizes for some of the interactive games.
+    :game_die: :orange[**Interactive games**]:  &nbsp; Challenge your friends to classic Inflatable competitive fun. Putt your way to victory with "Indoor Mini Golf" with 9 hole course. Work together in a thrilling "Light-Up Cones match" and much much more. Win amazing prizes for some of the interactive games.
 
-    :green[**Street Challenges**]: Non-stop fun with tons of on-the-spot prizes. Afterprom committee will test your brain and body for a chance to win a bucketload of awesome prizes! We'll have you thinking fast with trivia questions and then get you moving with fun physical challenges.
+    :brain: :green[**Street Challenges**]: &nbsp; Non-stop fun with tons of on-the-spot prizes. Afterprom committee will test your brain and body for a chance to win a bucketload of awesome prizes! We'll have you thinking fast with trivia questions and then get you moving with fun physical challenges.
     
-    :orange[**Food Fiesta**]: Fuel up with an explosion of delicious finger foods, snacks, soft drinks & party treats to keep you hydrated & charged up throughout the night
+    :pizza: :orange[**Food Fiesta**]: &nbsp; Fuel up with an explosion of delicious finger foods, snacks, soft drinks & party treats to keep you hydrated & charged up throughout the night
 
-    :red[**The Main Event**]: Electrify the night with our Celebrity guests from Chicago, the Z-LED Bots, all under the dazzling display of DJ lights, pulsing sounds & heart-pumping music
+    :robot_face: :red[**The Main Event**]: &nbsp; Electrify the night with our Celebrity guests from Chicago, the Z-LED Bots, all under the dazzling display of DJ lights, pulsing sounds & heart-pumping music
 
-    :blue[**Grand Finale**]: Get ready for college by gearing up for an epic giveaway, with the chance to win over $6000 in prizes. Create memories that will last long after the music & Afterprom fades away!
+    :gift: :blue[**Grand Finale**]: &nbsp; Get ready for college by gearing up for an epic giveaway, with the chance to win over $6000 in prizes. Create memories that will last long after the music & Afterprom fades away!
 
     """
     with st.container(border=True):
@@ -129,7 +124,7 @@ with col2:
         col1, col2 = st.columns([1,4])
        
         with col1:
-             st.markdown("**School web site:**")
+             st.markdown(":student: **Web site:**")
 
         with col2: 
             st.markdown("[Normal Community High School](https://www.unit5.org/NCHS)")
@@ -137,7 +132,7 @@ with col2:
         col1, col2 = st.columns([1,4])
         
         with col1:
-             st.markdown("**Buy Tickets:**")
+             st.markdown(":admission_tickets: **Buy Tickets:**")
              
         with col2:
             st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Use Access Code: :green[PROM24])")
@@ -145,14 +140,14 @@ with col2:
         col1, col2 = st.columns([1,4])
         
         with col1:
-             st.markdown("**Location:**")
+             st.markdown(":round_pushpin: **Location:**")
 
         with col2:
             st.markdown("3900 E Raab Rd, Normal, IL 61761, USA, Normal, IL, 61761 US")
 
         col1, col2 = st.columns([1,4])
         with col1:
-             st.markdown("**Directions:**")
+             st.markdown(":pushpin: **Directions:**")
 
         with col2:
             st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
