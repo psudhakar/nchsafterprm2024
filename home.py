@@ -129,15 +129,31 @@ with col2:
        
         with col1:
              st.markdown("**School web site:**")
-             st.markdown("**Buy Tickets:**")
-             st.markdown("")
-             st.markdown("**Location:**")
-             st.markdown("**Directions:**")
 
         with col2: 
             st.markdown("[Normal Community High School](https://www.unit5.org/NCHS)")
+
+        col1, col2 = st.columns([1,4])
+        
+        with col1:
+             st.markdown("**Buy Tickets:**")
+             
+        with col2:
             st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Only **$14** for AfterProm tickets from GoFan. Use Access Code: :green[PROM24])")
+
+        col1, col2 = st.columns([1,4])
+        
+        with col1:
+             st.markdown("**Location:**")
+
+        with col2:
             st.markdown("3900 E Raab Rd, Normal, IL 61761, USA, Normal, IL, 61761 US")
+
+        col1, col2 = st.columns([1,4])
+        with col1:
+             st.markdown("**Directions:**")
+
+        with col2:
             st.markdown("[Google](https://maps.google.com/?daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Bing](https://www.bing.com/maps/default.aspx?rtp=~adr.3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MapQuest](http://mapq.st/directions?saddr=&daddr=3900%20E%20Raab%20Rd%2C%20Normal%2C%20IL%2061761%2C%20USA%2C%20Normal%20IL%2061761%20US)")
 
     with st.container(border=True):
