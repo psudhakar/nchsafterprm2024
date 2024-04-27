@@ -97,8 +97,8 @@ col1, col2, col3 = st.columns([2,4,2])
 with col1:
     st.markdown("")
 with col2:
-    #st.video(video_bytes, loop=True)
-    st.markdown("")
+    st.video(video_bytes, loop=True)
+    #st.markdown("")
 with col3:
     st.markdown("")
 
