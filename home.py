@@ -146,7 +146,7 @@ with col1:
      agenda = pd.DataFrame.from_dict(agenda_dict)
         # Additional information
     st.markdown("")
-    important_note = "**;red[IMPORTANT:]** Be present to win it! If your name is called and you are not present, we will pull another lucky winner"
+    important_note = "**:red[IMPORTANT:]** Be present to win it! If your name is called and you are not present, we will pull another lucky winner"
     st.subheader("Agenda")
     st.markdown("""
         <table>
