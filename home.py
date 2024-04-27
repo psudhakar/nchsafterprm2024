@@ -91,7 +91,7 @@ st.balloons()
 video_file = open('NCHSAfterProm2024Rev3.mp4', 'rb')
 video_bytes = video_file.read()
 
-col1, col2, col3 = st.column([2,4,2])
+col1, col2, col3 = st.columns([2,4,2])
 with col1:
     st.markdown("")
 with col2:
