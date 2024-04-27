@@ -86,7 +86,18 @@ st.balloons()
 
 
 #st.video("https://drive.google.com/file/d/1CJ50CmGTJymc1gvoqHxZd7h4TsK139gT/view?usp=sharing")
-st.video("https://lh3.googleusercontent.com/d/1CJ50CmGTJymc1gvoqHxZd7h4TsK139gT")
+#st.video("https://lh3.googleusercontent.com/d/1CJ50CmGTJymc1gvoqHxZd7h4TsK139gT")
+
+video_file = open('NCHSAfterProm2024Rev3.mp4', 'rb')
+video_bytes = video_file.read()
+
+col1, col2, col3 = st.columns([2,4,2])
+with col1:
+    st.markdown("")
+with col2:
+    st.video(video_bytes, loop=True)
+with col3:
+    st.markdown("")
 
 col1, col2 = st.columns([4,3])
 
