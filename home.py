@@ -59,6 +59,13 @@ def example():
         animation_length="infinite",
     )
 
+# Set the theme to 'dark'
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+local_css("style.css")
+
 st.markdown(f"""<div style="text-align: center;">
     <img src="https://lh3.googleusercontent.com/d/1gG1iQtiO7Lfl_ZElvqBhfJ0_A0QCu6NE" alt="Image"  style="margin-top: 25px;" >
     </div>""", unsafe_allow_html=True)
@@ -97,8 +104,8 @@ col1, col2, col3 = st.columns([2,4,2])
 with col1:
     st.markdown("")
 with col2:
-    st.video(video_bytes, loop=True)
-    #st.markdown("")
+    #st.video(video_bytes, loop=True)
+    st.markdown("")
 with col3:
     st.markdown("")
 
@@ -132,18 +139,56 @@ with col1:
 #        }
 
      agenda_dict =   {
-         "Time": ["11 pm - 12.45 am", "12.45 am", "1 am  - 2 am", "2 am - 3 am"],
-         "Actiity": ["Multiple Activities in Big Gym, Small Gym, Lobby","Go straight to Fishbowl for the start of the Amazing Raffles - $9000 to $11000 prizes & gift cards","The Main Attraction Z-Bots LED Robots","Annouce winners of upto $11000 in prizes & gift cards"]
+         "Time": ["11 pm - 12.45 am", "--", "12.45 am", "1 am  - 2 am", "2 am - 3 am"],
+         "Actiity": ["Multiple Activities in Big Gym, Small Gym, Lobby", "Laser tag, Bop-it Lighted Cones, Inflatable Games, Mini Golf", "Go straight to Fishbowl for the start of the Amazing Raffles - $9000 to $11000 prizes & gift cards","The Main Attraction Z-Bots LED Robots","Annouce winners of upto $11000 in prizes & gift cards"]
      }
 
      agenda = pd.DataFrame.from_dict(agenda_dict)
         # Additional information
      important_note = "**IMPORTANT:** Be present to win it! If your name is called and you are not present, we will pull another lucky winner"
      st.subheader("Agenda")
-     agenda_table = st.dataframe(agenda, hide_index=True)
+    st.markdown("""
+        <table>
+        <thead>
+            <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>11 pm - 12:45 am</td>
+            <td>Multiple Activities in Big Gym, Small Gym, Lobby:
+                <ul>
+                    <li>Laser Tag</li>
+                    <li>Bop-It Lighted Cones</li>
+                    <li>Inflatable Games</li>
+                    <li>Mini Golf</li>
+                    <li>And much much more!</li>
+                </ul>                
+            </td>
+            </tr>
+            <tr>
+            <td>12:45 am</td>
+            <td>Go straight to Fishbowl for the start of the Amazing Raffles <br /> - $9000 to $11000 prizes & gift cards</td>
+            </tr>
+            <tr>
+            <td>1 am - 2 am</td>
+            <td>The Main Attraction Z-Bots LED Robots</td>
+            </tr>
+            <tr>
+            <td>2 am - 3 am</td>
+            <td>
+                Announce winners of upto $11000 in prizes & gift cards
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    """, unsafe_allow_html=True)
+    
         
      # Display the important note
-     st.write(important_note)
+    st.write(important_note)
 
 with col2:
     event_details3 = """
