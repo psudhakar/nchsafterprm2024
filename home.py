@@ -189,15 +189,17 @@ with col2:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(f"""<div style="text-align: center;">
-        <a href="https://lh3.googleusercontent.com/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c"><h3> Link to  Cafeteria Map</h3> </a>
-        </div>""", unsafe_allow_html=True)
-        #https://drive.google.com/file/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c/view?usp=sharing
+        with st.container(border=True):
+            st.markdown(f"""<div style="text-align: center;">
+            <a href="https://lh3.googleusercontent.com/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c"><h3> Link to  Cafeteria Map</h3> </a>
+            </div>""", unsafe_allow_html=True)
+            #https://drive.google.com/file/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c/view?usp=sharing
     with col2:
-        st.markdown(f"""<div style="text-align: center;">
-        <a href="https://lh3.googleusercontent.com/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM" > <h3> Link to Activity Map </h3>
-        </div>""", unsafe_allow_html=True)
-        #https://drive.google.com/file/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM/view?usp=sharing
+        with st.container(border=True):
+            st.markdown(f"""<div style="text-align: center;">
+            <a href="https://lh3.googleusercontent.com/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM" > <h3> Link to Activity Map </h3>
+            </div>""", unsafe_allow_html=True)
+            #https://drive.google.com/file/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM/view?usp=sharing
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
