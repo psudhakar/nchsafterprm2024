@@ -1,6 +1,7 @@
 import streamlit as st
 from random import choice
 import time
+import pandas as pd
 
 # Setting the page configuration with a background image
 st.set_page_config(
@@ -45,6 +46,7 @@ st.markdown("""
             display: none;
         }
     }
+            
 
     </style>
     """, unsafe_allow_html=True)
@@ -95,11 +97,12 @@ col1, col2, col3 = st.columns([2,4,2])
 with col1:
     st.markdown("")
 with col2:
-    st.video(video_bytes, loop=True)
+    #st.video(video_bytes, loop=True)
+    st.markdown("")
 with col3:
     st.markdown("")
 
-col1, col2 = st.columns([4,3])
+col1, col2 = st.columns([2,3])
 
 with col1:
     event_details = """
@@ -118,8 +121,29 @@ with col1:
     :gift: :blue[**Grand Finale**]: &nbsp; Get ready for college by gearing up for an epic giveaway, with the chance to win over $6000 in prizes. Create memories that will last long after the music & Afterprom fades away!
 
     """
+
     with st.container(border=True):
-        st.markdown(event_details, unsafe_allow_html=True )
+        #st.markdown(event_details, unsafe_allow_html=True )
+#     agenda = {
+#            "11 pm - 12:45 am": "Multiple Activities in Big Gym, Small Gym, Lobby",
+#            "12:45 am": "Go straight to Fishbowl for the start of the Amazing Raffles - $9000 to $11000 prizes & gift cards",
+#            "1 am - 2 am": "The Main Attraction Z-Bots LED Robots",
+#            "2 am - 3 am": "Annouce winners of upto $11000 in prizes & gift cards"
+#        }
+
+     agenda_dict =   {
+         "Time": ["11 pm - 12.45 am", "12.45 am", "1 am  - 2 am", "2 am - 3 am"],
+         "Actiity": ["Multiple Activities in Big Gym, Small Gym, Lobby","Go straight to Fishbowl for the start of the Amazing Raffles - $9000 to $11000 prizes & gift cards","The Main Attraction Z-Bots LED Robots","Annouce winners of upto $11000 in prizes & gift cards"]
+     }
+
+     agenda = pd.DataFrame.from_dict(agenda_dict)
+        # Additional information
+     important_note = "**IMPORTANT:** Be present to win it! If your name is called and you are not present, we will pull another lucky winner"
+     st.subheader("Agenda")
+     agenda_table = st.dataframe(agenda, hide_index=True)
+        
+     # Display the important note
+     st.write(important_note)
 
 with col2:
     event_details3 = """
@@ -133,7 +157,7 @@ with col2:
     """
      
     with st.container(border=True):
-        st.markdown(event_details3, unsafe_allow_html=True )
+        #st.markdown(event_details3, unsafe_allow_html=True )
 
         col1, col2 = st.columns([1,4])
        
@@ -143,13 +167,6 @@ with col2:
         with col2: 
             st.markdown("[Normal Community High School](https://www.unit5.org/NCHS)")
 
-        col1, col2 = st.columns([1,4])
-        
-        with col1:
-             st.markdown(":admission_tickets: **Buy Tickets:**")
-             
-        with col2:
-            st.markdown("[School GoFan site](https://gofan.co/app/school/IL21465) (Use Access Code: :green[PROM24])")
 
         col1, col2 = st.columns([1,4])
         
@@ -168,6 +185,19 @@ with col2:
 
     with st.container(border=True):
         st.markdown("✨ :rainbow[**Join us for an epic After Prom, an unforgettable journey beyond the ballroom**] ✨")
+    
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(f"""<div style="text-align: center;">
+        <a href="https://lh3.googleusercontent.com/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c"><h3> Link to  Cafeteria Map</h3> </a>
+        </div>""", unsafe_allow_html=True)
+        #https://drive.google.com/file/d/1rctJyIeh9Myg57TMx0zBDGYiYz3tA71c/view?usp=sharing
+    with col2:
+        st.markdown(f"""<div style="text-align: center;">
+        <a href="https://lh3.googleusercontent.com/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM" > <h3> Link to Activity Map </h3>
+        </div>""", unsafe_allow_html=True)
+        #https://drive.google.com/file/d/1EyX97oxT_p7vgQsmh-Rfa_66UDmx7KjM/view?usp=sharing
 
 st.image(
     "NCHSAfterPromFlyer.jpg",  # Replace with appropriate image
